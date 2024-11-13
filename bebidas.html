@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas - Café & Código</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="estilo.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Café & Código</a></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="menu-principal" onclick="altMenu(event, 'menuPedidos')">Pedidos</a>
+                    <ul id="menuPedidos" class="submenu">
+                        <li><a href="comida.html">Comida</a></li>
+                        <li><a href="bebidas.html">Bebidas</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="carrito.html" class="menu-principal" onclick="altMenu(event, 'menuCarrito')">Carrito</a>
+                    <ul id="menuCarrito" class="submenu">
+                        <li><a href="ver_carrito.html">Ver Carrito</a></li>
+                        <li><a href="finalizar_compra.html">Finalizar Compra</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Nuestro Menú de Bebidas</h2>
+        <ul id="listaBebidas">
+            <li class="itemBebida">Café Latte - $2.50</li>
+            <li class="itemBebida">Té Verde - $1.50</li>
+            <li class="itemBebida">Jugo de Naranja - $2.00</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Café & Código</p>
+    </footer>
+</body>
+</html>

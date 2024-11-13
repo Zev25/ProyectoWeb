@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comida - Café & Código</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="estilo.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">Café & Código</a></h1>
+        <nav>
+            <ul>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn" onclick="toggleDropdown(event, 'pedidosDropdown')">Pedidos</a>
+                    <ul id="pedidosDropdown" class="dropdown-content">
+                        <li><a href="comida.html">Comida</a></li>
+                        <li><a href="bebidas.html">Bebidas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="carrito.html" class="dropbtn" onclick="toggleDropdown(event, 'carritoDropdown')">Carrito</a>
+                    <ul id="carritoDropdown" class="dropdown-content">
+                        <li><a href="ver_carrito.html">Ver Carrito</a></li>
+                        <li><a href="finalizar_compra.html">Finalizar Compra</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Nuestro Menú de Comida</h2>
+        <ul>
+            <li>Pastel de Chocolate - $3.50</li>
+            <li>Sandwich de Pollo - $4.00</li>
+            <li>Croissant - $2.00</li>
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Café & Código</p>
+    </footer>
+</body>
+</html>

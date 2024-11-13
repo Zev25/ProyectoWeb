@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café & Código</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="estilo.js" defer></script>
+</head>
+<body id="fondo">
+    <header>
+        <h1><a href="index.html">Café & Código</a></h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#" class="dropbtn" onclick="altMenu(event, 'pedidosDropdown')">Pedidos</a>
+                    <ul id="pedidosDropdown" class="dropdown-content">
+                        <li><a href="comida.html">Comida</a></li>
+                        <li><a href="bebidas.html">Bebidas</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="carrito.html" class="dropbtn" onclick="altMenu(event, 'carritoDropdown')">Carrito</a>
+                    <ul id="carritoDropdown" class="dropdown-content">
+                        <li><a href="ver_carrito.html">Ver Carrito</a></li>
+                        <li><a href="finalizar_compra.html">Finalizar Compra</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main class="index_main">
+        <h2>Bienvenidos a Café & Código</h2>
+        <p>Descubre nuestras especialidades y disfruta de un ambiente acogedor.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Café & Código</p>
+    </footer>
+</body>
+</html>
