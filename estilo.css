@@ -6,9 +6,15 @@ body {
     color: #ffffff;
 }
 
-#fondo {
+#fondo-index {
     background: url('cafeteria_programacion.jpg') no-repeat center center fixed;
     background-size: cover;
+    position: relative;
+}
+
+#color-fondo {
+    background-color: white;
+    color: #333;
 }
 
 header {
@@ -17,6 +23,8 @@ header {
     padding: 10px 0;
     text-align: center;
     position: relative;
+    overflow: visible; /* Asegura que el contenido desplegable no afecte el tamaño */
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
 }
 
 header h1 {
@@ -36,6 +44,7 @@ nav ul {
     display: flex;
     justify-content: center;
     margin: 20px 0 0 0;
+    position: relative;
 }
 
 nav ul li {
@@ -47,36 +56,36 @@ nav ul li a {
     color: teal;
     text-decoration: none;
     font-size: 1.2em;
+    padding: 10px 20px;
+    display: block;
+}
+
+nav ul li a[href="carrito_compras.html"] {
+    color: #ff5722; /* Ajuste de color del enlace Carrito */
 }
 
 .dropdown-content {
     display: none;
-    position: absolute;
+    position: absolute; /* Asegura que el menú se posicione relativo al <li> */
     background-color: #35424a;
     min-width: 160px;
-    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    top: 100%; /* Asegura que el menú se despliegue debajo del elemento */
+    left: 0; /* Alinea el menú con el borde izquierdo del elemento padre */
 }
 
-.dropdown-content a {
-    color: white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {
-    background-color: #575757;
-}
-
+/* Asegura que el dropdown-content se muestre al hacer hover */
 nav ul li:hover .dropdown-content {
     display: block;
+    opacity: 1;
 }
 
 main {
     padding: 20px;
     text-align: center;
-    background-color: white; /*necesitamos un color para el fondo de las paginas menos index o si quieres vemos en cual usamos la de index*/
 }
 
 .index_main {
@@ -92,4 +101,93 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Estilo para las imágenes de bebidas y comida */
+.itemBebida,
+.itemComida {
+    display: flex;
+    align-items: center;
+    color: #333; /* Asegura que el texto sea visible */
+}
+
+.imgBebida,
+.imgComida {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.itemComida p,
+.itemBebida p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+#carrito-total,
+#titulo-carrito,
+#encabezado-carrito {
+    color: #333; /* Asegura que el texto del carrito sea visible */
+}
+
+#btn-finalizar {
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px; /* Relleno */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-left: 10px;
+}
+
+#btn-finalizar:hover {
+    background-color: #45a049; /* Fondo más oscuro al pasar el ratón */
+}
+
+button {
+    background-color: #4CAF50; /* Fondo verde */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px; /* Relleno */
+    cursor: pointer; /* Cursor de mano */
+    border-radius: 5px; /* Bordes redondeados */
+    margin-left: 10px;
+}
+
+button:hover {
+    background-color: #45a049; /* Fondo más oscuro al pasar el ratón */
+}
+
+/* Estilos para el carrito desplegable */
+.carrito {
+    position: absolute;
+    top: 20px; /* Ajusta este valor alinearlo verticalmente */
+    right: 20px; /* Ajusta este valor para alinearlo horizontalmente */
+}
+
+.carrito-boton {
+    background-color: #4CAF50; /* Color verde */
+    color: white; /* Texto blanco */
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.carrito-contenido {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+    padding: 12px 16px;
+    color: black;
+}
+
+.carrito:hover .carrito-contenido {
+    display: block;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="estilo.css">
     <script src="estilo.js" defer></script>
 </head>
-<body>
+<body id="color-fondo">
     <header>
         <h1><a href="index.html">Café & Código</a></h1>
         <nav>
@@ -19,22 +19,31 @@
                         <li><a href="bebidas.html">Bebidas</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="carrito.html" class="menu-principal" onclick="altMenu(event, 'menuCarrito')">Carrito</a>
-                    <ul id="menuCarrito" class="submenu">
-                        <li><a href="ver_carrito.html">Ver Carrito</a></li>
-                        <li><a href="finalizar_compra.html">Finalizar Compra</a></li>
-                    </ul>
-                </li>
             </ul>
         </nav>
+        <!-- Carrito Desplegable -->
+        <div id="carrito-desplegable" class="carrito">
+            <button class="carrito-boton">Carrito</button>
+            <div class="carrito-contenido">
+                <!-- Aquí se añadirán los productos dinámicamente -->
+            </div>
+        </div>
     </header>
     <main>
         <h2>Nuestro Menú de Bebidas</h2>
         <ul id="listaBebidas">
-            <li class="itemBebida">Café Latte - $2.50</li>
-            <li class="itemBebida">Té Verde - $1.50</li>
-            <li class="itemBebida">Jugo de Naranja - $2.00</li>
+            <li class="itemBebida">
+                <img src="images/cafe_latte.jpg" alt="Café Latte" class="imgBebida">
+                <p>Café Latte - $2.50 <button onclick="anadirCarrito('Café Latte', 2.50)">+</button></p>
+            </li>
+            <li class="itemBebida">
+                <img src="images/te_verde.jpg" alt="Té Verde" class="imgBebida">
+                <p>Té Verde - $1.50 <button onclick="anadirCarrito('Té Verde', 1.50)">+</button></p>
+            </li>
+            <li class="itemBebida">
+                <img src="images/jugo_naranja.jpg" alt="Jugo de Naranja" class="imgBebida">
+                <p>Jugo de Naranja - $2.00 <button onclick="anadirCarrito('Jugo de Naranja', 2.00)">+</button></p>
+            </li>
         </ul>
     </main>
     <footer>

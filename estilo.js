@@ -11,30 +11,30 @@ function anadirCarrito(producto, precio) {
 }
 
 function actuCarrito() {
-    let tablaCarrito = document.getElementById('cartTable');
-    if (!tablaCarrito) return;
-
-    tablaCarrito.innerHTML = `
-        <tr>
-            <th>Producto</th>
-            <th>Cantidad</th>
-            <th>Precio</th>
-        </tr>
+    let carritoContenido = document.querySelector('.carrito-contenido');
+    carritoContenido.innerHTML = `
+        <div>
+            <strong>Producto</strong> <strong>Cantidad</strong> <strong>Precio</strong>
+        </div>
     `;
 
     let precioTotal = 0;
     carrito.forEach(item => {
         precioTotal += item.precio * item.quantity;
-        tablaCarrito.innerHTML += `
-            <tr>
-                <td>${item.producto}</td>
-                <td>${item.quantity}</td>
-                <td>$${(item.precio * item.quantity).toFixed(2)}</td>
-            </tr>
+        carritoContenido.innerHTML += `
+            <div>
+                <span>${item.producto}</span>
+                <span>${item.quantity}</span>
+                <span>$${(item.precio * item.quantity).toFixed(2)}</span>
+            </div>
         `;
     });
 
-    document.getElementById('totalPrice').innerText = `$${precioTotal.toFixed(2)}`;
+    carritoContenido.innerHTML += `
+        <div>
+            <strong>Total:</strong> <span id="totalPrice">$${precioTotal.toFixed(2)}</span>
+        </div>
+    `;
 }
 
 // Función para alternar la visibilidad del menú desplegable
@@ -57,11 +57,17 @@ function closeAllDropdowns() {
     }
 }
 
+// Mostrar/Ocultar contenido del carrito
+document.querySelector('.carrito-boton').addEventListener('click', function() {
+    var carritoContenido = document.querySelector('.carrito-contenido');
+    carritoContenido.style.display = carritoContenido.style.display === 'block' ? 'none' : 'block';
+});
+
+// Ejecutar cuando la página se carga
+document.addEventListener('DOMContentLoaded', actuCarrito);
+
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
         closeAllDropdowns();
     }
-}
-
-// Ejecutar cuando la página carrito.html se carga
-document.addEventListener('DOMContentLoaded', actuCarrito);
+};

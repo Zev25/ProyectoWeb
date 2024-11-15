@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="estilo.css">
     <script src="estilo.js" defer></script>
 </head>
-<body id="fondo">
+<body id="fondo-index">
     <header>
         <h1><a href="index.html">Café & Código</a></h1>
         <nav>
@@ -19,15 +19,14 @@
                         <li><a href="bebidas.html">Bebidas</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="carrito.html" class="dropbtn" onclick="altMenu(event, 'carritoDropdown')">Carrito</a>
-                    <ul id="carritoDropdown" class="dropdown-content">
-                        <li><a href="ver_carrito.html">Ver Carrito</a></li>
-                        <li><a href="finalizar_compra.html">Finalizar Compra</a></li>
-                    </ul>
-                </li>
             </ul>
         </nav>
+        <div id="carrito-desplegable" class="carrito">
+            <button class="carrito-boton">Carrito</button>
+            <div class="carrito-contenido">
+                <!-- Aquí se añadirán los productos dinámicamente -->
+            </div>
+        </div>
     </header>
     <main class="index_main">
         <h2>Bienvenidos a Café & Código</h2>
