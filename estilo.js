@@ -1,4 +1,4 @@
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
 function anadirCarrito(producto, precio) {
     let item = carrito.find(item => item.producto === producto);
@@ -7,6 +7,7 @@ function anadirCarrito(producto, precio) {
     } else {
         carrito.push({ producto, precio, quantity: 1 });
     }
+    localStorage.setItem('carrito', JSON.stringify(carrito));
     actuCarrito();
 }
 
